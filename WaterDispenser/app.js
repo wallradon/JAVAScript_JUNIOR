@@ -59,7 +59,9 @@ while (stateBuy) {
       if (selectItem == 'y' || selectItem == 'Y') {
         wallet -= itemA;
         console.log(`You Buy itemA`);
-        if (wallet == 0) {
+        selectItem = prompt(`do you need anything else ?`);
+        if (wallet == 0 || selectItem == 'N' || selectItem == 'n') {
+          selectBuy = 'n';
           stateBuy = false;
         }
       } else {
@@ -77,7 +79,7 @@ while (stateBuy) {
 if (wallet != 0) {
   rechang = prompt(`you wont chang Y|N ?`);
   if (rechang == 'y' || rechang == 'Y') {
-    alert(`this is a change ${wallet} BTN`);
+    alert(`this is a change ${wallet} THB`);
   } else {
     alert(`Thank You`);
   }
